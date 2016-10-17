@@ -15,25 +15,24 @@ c = db.cursor()    #facilitate db ops
 
 #q = "CREATE TABLE students (name TEXT, id INTEGER)"
 #c.execute(q)    #run SQL query
- # list of lists
 
 
 fObj = open("peeps.csv") 
 d=csv.DictReader(fObj)
-q = "CREATE TABLE students (name TEXT, id INTEGER)"
-c.execute(q)    #run SQL query
+##q = "CREATE TABLE students (name TEXT, id INTEGER)"
+##c.execute(q)    #run SQL query
 for a in d:
-	command = "INSERT INTO students VALUES(" + a['name'] +"," + a['id']+ ")"
+	command = "INSERT INTO students VALUES('" + a['name'] +"'," + a['id']+ ")"
 	c.execute(command)
 
 	
 
 sObj = open("courses.csv")
 x = csv.DictReader(sObj)
-p = "CREATE TABLE courses (code TEXT, id INTEGER, mark INTEGER)"
-c.execute(p)
+#p = "CREATE TABLE courses (code TEXT, id INTEGER, mark INTEGER)"
+#c.execute(p)
 for b in x:
-	command = "INSERT INTO courses VALUES("+ b['name'] +"," + b['mark']+"," + b['id']+")"
+	command = "INSERT INTO courses VALUES('"+ b['code'] + "'," + b['mark']+"," + b['id']+")"
 	c.execute(command)
 
 
