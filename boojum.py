@@ -11,41 +11,17 @@ d = {}
 command = "SELECT name, students.id, mark FROM students, courses WHERE students.id = courses.id;"
 haha = og.execute(command)
 for item in haha:
-	print item[0]
-haha = og.execute(command)
-for item in haha:
- 	print item[1]
- 		#print "b"
- 		#if item[1] in d.keys():
- 		#	d[item[1]] += " " + item[2]
- 		#	#sum += float(item[2])	
- 		#	#ct +=1
- 		#else:
- 		#	d[item[1]] = " "+ item[2]# id, code, grade
- 			#sum += float(item[2])
- 			#ct +=1
- 			
- 	#for k in d:
- 	#	if (k == str(idee)):
- 	#		retStr += k + "\t" + d[k] + "\n"
- 	#print retStr
- 	#return retStr
-	
-
-
-#def makeAvgs(idee):
-	#x = getGrades(idee)
-	#L = x.split(' ')
-	#i = 1.0
-	#sum = 0.0
-	#while (i < len(L)):
-	#	sum += L[i]
-	#	i+=1
-	#eturn sum/i
-
-
-#getGrades(2)
-#makeAvgs(1)
+ 	if (item[0] in d.keys()):
+ 		d[item[0]].append(item[2])
+ 	else:
+ 		d[item[0]] = [item[2]]
+for k in d:
+	sum41 = 0
+	count = 0
+ 	for i in d[k]:
+ 		sum41+= i
+ 		count +=1
+ 	print str(k) + ": " + str(float(sum41/count))
 
 
 
