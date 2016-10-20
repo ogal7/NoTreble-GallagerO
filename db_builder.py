@@ -12,8 +12,7 @@ c = db.cursor()    #facilitate db ops
 #==========================================================
 #INSERT YOUR POPULATE CODE IN THIS ZONE
 #...perhaps by beginning with these examples...
-
-#q = "CREATE TABLE students (name TEXT, id INTEGER)"
+##q = "CREATE TABLE students (name TEXT, id INTEGER)"
 #c.execute(q)    #run SQL query
 
 
@@ -32,7 +31,7 @@ x = csv.DictReader(sObj)
 p = "CREATE TABLE courses (code TEXT, id INTEGER, mark INTEGER)"
 c.execute(p)
 for b in x:
-	command = "INSERT INTO courses VALUES('"+ b['code'] + "'," + b['mark']+"," + b['id']+")"
+	command = "INSERT INTO courses VALUES('"+ b['code'] + "'," + b['id']+"," + b['mark']+")"
 	c.execute(command)
 
 

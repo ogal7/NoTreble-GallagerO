@@ -8,15 +8,13 @@ d = {}
 
 
 
-def getGrades(idee):
- 	command = "SELECT name, students.id, mark FROM students, courses WHERE students.id = courses.id"
- 	retStr = ""
- 	sum = 0
- 	ct = 0.0
- 	#print "a"
- 	og.execute(command)
- 	for item in og:
- 		print item[0]
+command = "SELECT name, students.id, mark FROM students, courses WHERE students.id = courses.id;"
+haha = og.execute(command)
+for item in haha:
+	print item[0]
+haha = og.execute(command)
+for item in haha:
+ 	print item[1]
  		#print "b"
  		#if item[1] in d.keys():
  		#	d[item[1]] += " " + item[2]
@@ -46,7 +44,7 @@ def getGrades(idee):
 	#eturn sum/i
 
 
-getGrades(2)
+#getGrades(2)
 #makeAvgs(1)
 
 
